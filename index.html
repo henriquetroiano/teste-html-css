@@ -5,6 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/home.css">
     <link rel="stylesheet" href="styles/responsive.css">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="/js/plugins/nivo/jquery.nivo.slider.js"></script>
+
+    <link rel="stylesheet" href="./js/plugins/nivo/themes/default/default.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="js/plugins/nivo/nivo-slider.css" type="text/css" media="screen" />
+
+    <script type="text/javascript">
+        $(window).load(function() {
+        $('#slider').nivoSlider({
+        effect: 'random',
+        slices: 15,
+        boxCols: 8,
+        boxRows: 4,
+        animSpeed: 500,
+        pauseTime: 3000,
+        startSlide: 0,
+        directionNav: true,
+        controlNav: false,
+        controlNavThumbs: false,
+        pauseOnHover: true,
+        manualAdvance: false,
+        prevText: ' ',
+        nextText: ' ',
+        randomStart: false,
+        beforeChange: function(){},
+        afterChange: function(){},
+        slideshowEnd: function(){},
+        lastSlide: function(){},
+        afterLoad: function(){}
+        });
+        });
+        </script>
+    
+   
     <title>HTML-CSS</title>
 </head>
 <body>
@@ -14,18 +48,18 @@
             <a href="tel:+551112341234">11 1234-1234</a>
         </section>
         <nav>
-            <figure>
-                <img src="" alt="imagem do menu superior">
+            <figure class="top_menu_img">
+                <img src="https://via.placeholder.com/228x90.png/00008b/ffffff?text=IMAGEM" alt="imagem do menu superior">
             </figure>
             <ul class="top_menu">
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Empresa</a>
-                    <ul>
+                    <ul class="submenu1">
                         <li><a href="#">Submenu1</a></li>
                         <li><a href="#">Submenu1</a></li>
                         <li><a href="#">Submenu1</a></li>
                         <li><a href="#">Submenu1</a>
-                            <ul>
+                            <ul class="submenu2">
                                 <li><a href="#">Submenu2</a></li>
                                 <li><a href="#">Submenu2</a></li>
                                 <li><a href="#">Submenu2</a></li>
@@ -42,7 +76,11 @@
 
     <main>
         <section class="slider">
-            <h1>slider jquery aqui</h1>
+            <div id="slider" style="width: 80%; height: 290px; margin: 0 auto;" class="nivoSlider"> 
+                <img src="/imgs/1.jpg" data-thumb="images/toystory.jpg" alt="" /> 
+                <img src="/imgs/2.png" data-thumb="images/up.jpg" alt="" title="Exemplo com descrição" />
+            </div>
+          
         </section>
         <section class="info">
             <article>
@@ -56,7 +94,7 @@
                 <p>Obrigado e boa sorte!</p>
             </article>
             <figure>
-                <img src="/aksjdflkasjdlfks.jpg" alt="Placeholder aqui">
+                <img src="https://via.placeholder.com/325x212.png/00008b/ffffff?text=IMAGEM" alt="imagem do teste">
             </figure>
         </section>
     </main>
@@ -65,20 +103,20 @@
         <h1>Boxes de destaque</h1>
         <section class="hilight">
             <figure>
-                <img src="" alt="img">
-                <figcaption>description</figcaption>
+                <img src="https://via.placeholder.com/196x163.png/00008b/ffffff?text=IMAGEM" alt="imagem do ">
+                <figcaption><a href="#">Um texto descritivo com link apenas</a></figcaption>
             </figure>
             <figure>
-                <img src="" alt="img">
-                <figcaption>description</figcaption>
+                <img src="https://via.placeholder.com/196x163.png/00008b/ffffff?text=IMAGEM" alt="imagem do ">
+                <figcaption><a href="#">Um texto descritivo com link apenas</a></figcaption>
             </figure>
             <figure>
-                <img src="" alt="img">
-                <figcaption>description</figcaption>
+                <img src="https://via.placeholder.com/196x163.png/00008b/ffffff?text=IMAGEM" alt="imagem do ">
+                <figcaption><a href="#">Um texto descritivo com link apenas</a></figcaption>
             </figure>
             <figure>
-                <img src="" alt="img">
-                <figcaption>description</figcaption>
+                <img src="https://via.placeholder.com/196x163.png/00008b/ffffff?text=IMAGEM" alt="imagem do ">
+                <figcaption><a href="#">Um texto descritivo com link apenas</a></figcaption>
             </figure>
         </section>
     </aside>
