@@ -213,6 +213,7 @@ main > .info {
 
 main > .info > article {
     flex: 1;
+    min-width: 50vh;
 }
 
 main > .info > article > h1 {
@@ -242,6 +243,7 @@ aside {
     height: max-content;
     margin: 0 auto;
     width: 80%;
+    padding:  0 0 20px 0 ;
 }
 
 aside > h1 {
@@ -256,10 +258,12 @@ aside > .hilight {
     flex-wrap: wrap;
     padding: 10px 0;
     flex: 1;
+
 }
 
 aside > .hilight > figure {
     width: 196px;
+    margin-bottom: 20px;
 }
 
 aside > .hilight > figure > img { 
@@ -268,8 +272,6 @@ aside > .hilight > figure > img {
 }
 
 
-aside > .hilight > figure > figcaption { 
-}
 
 aside > .hilight > figure > figcaption > a {
     font-size: 0.7rem;
@@ -290,6 +292,45 @@ aside > .hilight > figure > figcaption > a {
 
 footer {
     grid-area: footer;
+    width: 100%;
+    background: var(--footer-color);
+    display: flex;
+    flex-direction: column;
+    height: 20vh;
+    align-items: center;
+    justify-content: space-between;
+}
+
+footer > nav > ul {
+    display: flex;
+    justify-content: space-between;
+    width: 33%;
+    margin: 15px 0;
+}
+
+footer > nav > ul > li {
+    list-style: none;
+}
+
+footer > nav > ul > li > a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 10px;
+    transition: 1s;
+}
+
+footer > nav > ul > li > a:hover { 
+    background-color: white;
+    color: black;
+    border-bottom: 2px solid black;
+}
+
+footer > p { 
+    color: white;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    margin-bottom: 5vh;
 }
 
 
