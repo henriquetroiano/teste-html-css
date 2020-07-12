@@ -1,336 +1,309 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
 /* setting some default values */
 :root {
-    --text-color: rgb(161, 161, 161);
-    --site-color: white;
-    --footer-color: gray;
-    --background-darkblue: #00008b;
+  --text-color: rgb(161, 161, 161);
+  --site-color: white;
+  --footer-color: gray;
+  --background-darkblue: #00008b;
 }
 
 /* reset CSS */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Roboto, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Roboto, sans-serif;
 }
-
-
-
 
 /* header style */
 
 header {
-    height: 17vh;
+  height: 17vh;
 }
-
 
 header > #phones {
-    height: 4vh;
-    background-color: var(--background-darkblue);
-    padding: 3px 10%;
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    
+  height: 4vh;
+  background-color: var(--background-darkblue);
+  padding: 3px 10%;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
 }
-
 
 /* header's phone styles */
 header > #phones > a {
-    color: white;
-    font-size: 0.9rem;
-    text-decoration: none;
-    margin-left: 1rem;
-    align-self: center;
+  color: white;
+  font-size: 0.9rem;
+  text-decoration: none;
+  margin-left: 1rem;
+  align-self: center;
 }
-
-
 
 /* main menu styles */
 header > nav {
-    grid-area: header;
-    display: flex;
-    justify-content: space-between;
-    padding: 5px 10%;
-    height: 13vh;
+  grid-area: header;
+  display: flex;
+  justify-content: space-between;
+  padding: 1vh 10%;
+  height: 13vh;
 }
 
 header > nav > figure > img {
-    height: 100%;
-    width: auto;
+  height: 100%;
+  width: auto;
 }
 
-
+/* eliminate span button  for mobile from desktop context */
+header > nav > span {
+  display: none;
+}
 
 .top_menu {
-    height: 100%;
-    display: flex;
+  height: 100%;
+  display: flex;
 }
 
 .top_menu > li {
-    align-self: flex-end;
-    list-style: none;
-    position: relative;
-    float: left; 
+  align-self: flex-end;
+  list-style: none;
+  position: relative;
+  float: left;
 }
 
 .top_menu > li > a {
-    text-transform: uppercase;
-    text-decoration: none;
-    color: var(--text-color);
-    padding: 15px 0 15px 10px;
-    display: block;
-    font-size: 1rem;
-    height: auto;
-    
-    transition: 1s;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--text-color);
+  padding: 15px 0 15px 10px;
+  display: block;
+  font-size: 1rem;
+  height: auto;
+
+  transition: 1s;
 }
-
-
 
 .top_menu > li > a:hover {
-    color: black;
-    opacity: 0.9;
+  color: black;
+  opacity: 0.9;
 }
-
 
 /* first submenu styles */
 .top_menu > li > .submenu1 {
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: none;
-
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
 }
 
-	/* at hover a li, it's ul item shows up -- without javascript  */
+/* at hover a li, it's ul item shows up -- without javascript  */
 .top_menu > li:hover > .submenu1 {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    position: absolute;
-    top: 54px;
-    left: 0;
-    background-color: var(--background-darkblue);
-    height: max-content;
-    width: 100px;
-    padding: 1.25vh 0;
-    z-index: 50;
-
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: absolute;
+  top: 45px;
+  left: 0;
+  background-color: var(--background-darkblue);
+  height: max-content;
+  width: 100px;
+  padding: 5px 0;
+  z-index: 50;
 }
-
 
 .top_menu > li:hover > .submenu1 > li {
-    list-style: none;
-    width: 100%;
-    display: flex;
-    
-    
+  list-style: none;
+  width: 100%;
+  display: flex;
 }
 
-.top_menu > li:hover > .submenu1 > li > a { 
-    color: white;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 0.8rem;
-    flex: 1;
-    text-align: center;
-    line-height: 5vh;
-    
+.top_menu > li:hover > .submenu1 > li > a {
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  flex: 1;
+  text-align: center;
+  line-height: 5vh;
 }
 
 /* second submenu styles */
 .submenu2 {
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
 }
 
-	/* at hover a li, it's ul item shows up -- without javascript  */
+/* at hover a li, it's ul item shows up -- without javascript  */
 .top_menu > li:hover > .submenu1 > li:hover > .submenu2 {
-    display:block;
-    position: absolute;
-    top: 15vh;
-    left: 100px;
-    background-color: var(--background-darkblue);
-    height: max-content;
-    width: 100px;
-    padding: 1.25vh 0;
-
+  display: block;
+  position: absolute;
+  top: 15vh;
+  left: 100px;
+  background-color: var(--background-darkblue);
+  height: max-content;
+  width: 100px;
+  padding: 5px 0;
 }
-
 
 .top_menu > li:hover > .submenu1 > li:hover > .submenu2 > li {
-    list-style: none;
-    width: 100%;
-    width: auto;
-    height: 5vh;
-    display: flex;
-    
+  list-style: none;
+  width: 100%;
+  width: auto;
+  height: 5vh;
+  display: flex;
 }
 
-.top_menu > li:hover > .submenu1 > li:hover > .submenu2 > li > a { 
-    color: white;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-size: 0.8rem;
-    flex: 1;
-    text-align: center;
-    vertical-align: middle;
-    line-height: 5vh;
-    
+.top_menu > li:hover > .submenu1 > li:hover > .submenu2 > li > a {
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  flex: 1;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 5vh;
 }
 
-
-
-
-
+/* main styles */
 main {
-    grid-area: main;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  grid-area: main;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 /* slider styles */
-main > .slider  {
-    background-color: rgb(212, 211, 211);
-    height: max-content;
+main > .slider {
+  background-color: rgb(212, 211, 211);
+  height: max-content;
 }
 
+section.slider > div#slider {
+  height: max-content;
+  max-height: 290px;
+  width: max-content;
+  max-width: 894px;
+}
 
 /* main article styles */
 main > .info {
-    width: 80%;
-    display: flex;
-    justify-content: space-between;
-    margin: 0 auto;
-    flex-wrap: wrap;
-    padding: 10px 0;
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  padding: 10px 0;
 }
 
 main > .info > article {
-    flex: 1;
-    min-width: 50vh;
+  min-width: 50vh;
 }
 
 main > .info > article > h1 {
-    text-transform: uppercase;
-    color: var(--text-color);
-    margin-bottom: 15px;
-    font-size: 1.5rem;
+  text-transform: uppercase;
+  color: var(--text-color);
+  margin-bottom: 15px;
+  font-size: 1.5rem;
 }
 
-main > .info > article > p { 
-    color: var(--text-color);
-    margin: 10px 0;
-    font-size: 1rem;
-} 
-
-main > .info > article li { 
-    color: var(--text-color);
-    font-size: 1rem;
-    list-style-position: inside;
+main > .info > article > p {
+  color: var(--text-color);
+  margin: 10px 0;
+  font-size: 1rem;
 }
 
-
+main > .info > article li {
+  color: var(--text-color);
+  font-size: 1rem;
+  list-style-position: inside;
+}
 
 /* aside area styles */
 
 aside {
-    height: max-content;
-    margin: 0 auto;
-    width: 80%;
-    padding:  0 0 20px 0 ;
+  height: max-content;
+  margin: 0 auto;
+  width: 80%;
+  padding: 0 0 20px 0;
 }
 
 aside > h1 {
-    color: var(--text-color);
-    font-size: 1.5rem;
-    margin: 10px 0;
+  color: var(--text-color);
+  font-size: 1.5rem;
+  margin: 10px 0;
+  text-transform: uppercase;
 }
 
 aside > .hilight {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    padding: 10px 0;
-    flex: 1;
-
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 10px 0;
+  flex: 1;
 }
 
 aside > .hilight > figure {
-    width: 196px;
-    margin-bottom: 20px;
+  width: 196px;
+  margin-bottom: 20px;
 }
 
-aside > .hilight > figure > img { 
-    width: 196px;
-    height: 163px;
+aside > .hilight > figure > img {
+  width: 196px;
+  height: 163px;
 }
-
-
 
 aside > .hilight > figure > figcaption > a {
-    font-size: 0.7rem;
-    text-decoration: none;
-    color: var(--text-color);
+  font-size: 0.7rem;
+  text-decoration: none;
+  color: var(--text-color);
 }
 
+/* this don't let the figure touch his "brother" when resize the screen, when it happens, it wraps!  */
+aside > .hilight > figure + figure {
+  margin-left: 50px;
+}
 
-
-
-
-
-
-
-
-
-
-
+/* footer styles */
 footer {
-    grid-area: footer;
-    width: 100%;
-    background: var(--footer-color);
-    display: flex;
-    flex-direction: column;
-    height: 20vh;
-    align-items: center;
-    justify-content: space-between;
+  grid-area: footer;
+  width: 100%;
+  background: var(--footer-color);
+  display: flex;
+  flex-direction: column;
+  height: 20vh;
+  align-items: center;
+  justify-content: space-between;
 }
 
 footer > nav > ul {
-    display: flex;
-    justify-content: space-between;
-    width: 33%;
-    margin: 15px 0;
+  display: flex;
+  justify-content: space-between;
+  width: 33%;
+  margin: 15px 0;
 }
 
 footer > nav > ul > li {
-    list-style: none;
+  list-style: none;
 }
 
 footer > nav > ul > li > a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.2rem;
-    padding: 10px;
-    transition: 1s;
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  padding: 10px;
+  transition: 1s;
 }
 
-footer > nav > ul > li > a:hover { 
-    background-color: white;
-    color: black;
-    border-bottom: 2px solid black;
+footer > nav > ul > li > a:hover {
+  background-color: white;
+  color: black;
+  border-bottom: 2px solid black;
 }
 
-footer > p { 
-    color: white;
-    text-transform: uppercase;
-    font-size: 1.2rem;
-    margin-bottom: 5vh;
+footer > p {
+  color: white;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  margin-bottom: 5vh;
 }
-
-

@@ -1,0 +1,158 @@
+@media (orientation: portrait) and (max-width: 1080px) {
+  /* assure that the phone's section complete all the viewport width */
+  #phones {
+    width: 100vw;
+  }
+
+  /* menu mobile styles */
+  header > nav {
+    flex-direction: row-reverse;
+  }
+
+  header > nav > figure {
+    display: flex;
+    align-self: flex-end;
+  }
+
+  header > nav > figure > img {
+    height: 11vh;
+  }
+
+  /* setting button mobile for open/close menu */
+  .menu_mobile_button {
+    display: flex;
+    background: url("../assets/open-menu.svg") no-repeat;
+    background-size: 100%;
+    background-position-y: center;
+    width: 11vh;
+    height: 11vh;
+    position: absolute;
+    top: 5vh;
+    left: 10%;
+    z-index: 500;
+    transition: 0.2s;
+    transform: scale(0.5);
+    margin-left: -2.25vh;
+  }
+
+  .menu_mobile_button.active {
+    background: url("../assets/close-menu.svg") no-repeat;
+    background-size: 100%;
+    background-position-y: center;
+    transform: rotate(180deg) scale(0.5);
+  }
+
+  /* setting desktop menu as invisible for mobile or portrait screens */
+  .top_menu {
+    display: none;
+  }
+
+  /* setting menu for mobile or portrait screens */
+  .top_menu.mobile {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 14vh;
+    left: 10%;
+    z-index: 50;
+    background-color: var(--background-darkblue);
+    width: max-content;
+    height: max-content;
+    padding: 5px 15px;
+  }
+
+  .top_menu.mobile > li {
+    width: max-content;
+    margin: 0 auto;
+  }
+
+  .top_menu.mobile > li > a {
+    padding: 15px;
+    color: white;
+  }
+
+  .top_menu.mobile > li > a:hover {
+    background-color: white;
+    color: black;
+  }
+
+  /* first submenu styles */
+
+  .top_menu.mobile > li > .submenu1 {
+    height: 1px;
+    overflow: hidden;
+  }
+
+  .top_menu.mobile > li > .submenu1.active {
+    background-color: rgb(6, 6, 185);
+    position: relative;
+    left: 0;
+    top: 0;
+    height: max-content;
+  }
+
+  .top_menu.mobile > li > .submenu1.active > li {
+    flex-direction: column;
+    transition: 1s;
+  }
+
+  .top_menu.mobile > li > .submenu1.active > li:hover,
+  .top_menu.mobile > li > .submenu1.active > li:hover > a {
+    background-color: white;
+    color: black;
+  }
+
+  /* second  submeny styles */
+  .top_menu.mobile > li > .submenu1 > li > .submenu2 {
+    height: 1px;
+    overflow: hidden;
+  }
+
+  .top_menu.mobile > li > .submenu1 > li > .submenu2.active {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(6, 6, 185);
+    position: relative;
+    left: 0;
+    top: 0;
+    height: max-content;
+  }
+
+  section.slider > div#slider {
+    height: max-content;
+    max-height: 290px;
+    width: max-content;
+    max-width: 894px;
+  }
+
+  /* setting figure styles for html text explanation */
+  main > .info > figure {
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  main > .info > figure > img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* aside section for mobile devices */
+
+  aside > h1 {
+    margin-top: 25px;
+  }
+
+  aside > .hilight > figure {
+    width: 100%;
+  }
+
+  aside > .hilight > figure > img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* cancelling the margin for flex wrap in desktop mode */
+  aside > .hilight > figure + figure {
+    margin-left: 0;
+  }
+}
