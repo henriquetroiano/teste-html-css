@@ -1,3 +1,41 @@
+/* responsive for desktop with low resolution */
+@media (orientation: landscape) and (max-width: 1000px) {
+  body > div.container {
+    width: 100%;
+  }
+
+  header > #phones > .container {
+    width: 600px;
+  }
+  header > nav > div.container {
+    width: 600px;
+  }
+  header > nav > div.container > .top_menu {
+    padding: 0;
+  }
+
+  header > nav > div.container > .top_menu > li > a {
+    font-size: 1.2rem;
+  }
+
+  header > nav > div.container > .top_menu > li:hover > .submenu1 {
+    top: 2rem;
+  }
+
+  div.slider > div#slider {
+    width: 600px;
+    height: 200px;
+  }
+
+  main > .info {
+    max-width: 600px;
+  }
+
+  aside {
+    width: 600px;
+  }
+}
+
 @media (orientation: portrait) and (max-width: 1080px) {
   /* assure that white gap doesn't show on mobile devices */
   html,
@@ -5,42 +43,51 @@
     overflow-x: hidden;
   }
   /* assure that the phone's section complete all the viewport width */
+
   #phones {
     width: 100vw;
   }
 
+  #phones > div.container {
+    width: 90%;
+  }
+
   /* menu mobile styles */
-  header > nav {
-    flex-direction: row-reverse;
+  header {
+    height: max-content;
+  }
+  header > nav > div.container {
+    width: 90%;
+    height: max-content;
+    align-items: center;
   }
 
-  header > nav > figure {
-    display: flex;
-    align-self: flex-end;
+  header > nav > div.container > figure {
+    width: 60%;
   }
 
-  header > nav > figure > img {
-    height: 11vh;
+  header > nav > div.container > figure > img {
+    width: 100%;
   }
 
   /* setting button mobile for open/close menu */
-  .menu_mobile_button {
+  header > nav > div.container > span.menu_mobile_button {
     display: flex;
     background: url("../assets/open-menu.svg") no-repeat;
     background-size: 100%;
     background-position-y: center;
-    width: 11vh;
-    height: 11vh;
-    position: absolute;
-    top: 5vh;
-    left: 10%;
-    z-index: 500;
+    width: 6rem;
+    height: 6rem;
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 5000;
     transition: 0.2s;
     transform: scale(0.5);
     margin-left: -2.25vh;
   }
 
-  .menu_mobile_button.active {
+  header > nav > div.container > .menu_mobile_button.active {
     background: url("../assets/close-menu.svg") no-repeat;
     background-size: 100%;
     background-position-y: center;
@@ -48,17 +95,17 @@
   }
 
   /* setting desktop menu as invisible for mobile or portrait screens */
-  .top_menu {
+  header > nav > div.container > .top_menu {
     display: none;
   }
 
   /* setting menu for mobile or portrait screens */
-  .top_menu.mobile {
+  header > nav > div.container > .top_menu.mobile {
     display: flex;
     flex-direction: column;
     position: absolute;
-    top: 14vh;
-    left: 10%;
+    top: 10rem;
+    left: 5%;
     z-index: 50;
     background-color: var(--background-darkblue);
     width: max-content;
@@ -66,54 +113,29 @@
     padding: 5px 15px;
   }
 
-  .top_menu.mobile > li {
-    width: max-content;
+  header > nav > div.container > .top_menu.mobile > li {
     margin: 0 auto;
+    padding: 10px;
   }
 
-  .top_menu.mobile > li > a {
-    padding: 15px;
+  header > nav > div.container > .top_menu.mobile > li > a {
+    padding: 10px;
     color: white;
   }
 
-  .top_menu.mobile > li > a:hover {
+  header > nav > div.container > .top_menu.mobile > li > a:hover {
     background-color: white;
     color: black;
   }
 
   /* first submenu styles */
 
-  .top_menu.mobile > li > .submenu1 {
-    height: 1px;
+  header > nav > div.container > .top_menu.mobile > li > .submenu1 {
+    display: none;
     overflow: hidden;
   }
 
-  .top_menu.mobile > li > .submenu1.active {
-    background-color: rgb(6, 6, 185);
-    position: relative;
-    left: 0;
-    top: 0;
-    height: max-content;
-  }
-
-  .top_menu.mobile > li > .submenu1.active > li {
-    flex-direction: column;
-    transition: 1s;
-  }
-
-  .top_menu.mobile > li > .submenu1.active > li:hover,
-  .top_menu.mobile > li > .submenu1.active > li:hover > a {
-    background-color: white;
-    color: black;
-  }
-
-  /* second  submeny styles */
-  .top_menu.mobile > li > .submenu1 > li > .submenu2 {
-    height: 1px;
-    overflow: hidden;
-  }
-
-  .top_menu.mobile > li > .submenu1 > li > .submenu2.active {
+  header > nav > div.container > .top_menu.mobile > li > .submenu1.active {
     display: flex;
     flex-direction: column;
     background-color: rgb(6, 6, 185);
@@ -123,16 +145,76 @@
     height: max-content;
   }
 
-  section.slider > div#slider {
+  header > nav > div.container > .top_menu.mobile > li > .submenu1.active > li {
+    flex-direction: column;
+    transition: 1s;
+  }
+
+  header
+    > nav
+    > div.container
+    > .top_menu.mobile
+    > li
+    > .submenu1.active
+    > li:hover,
+  header
+    > nav
+    > div.container
+    > .top_menu.mobile
+    > li
+    > .submenu1.active
+    > li:hover
+    > a {
+    background-color: white;
+    color: black;
+  }
+
+  /* second  submeny styles */
+  header
+    > nav
+    > div.container
+    > .top_menu.mobile
+    > li
+    > .submenu1
+    > li
+    > .submenu2 {
+    height: 1px;
+    overflow: hidden;
+  }
+
+  header
+    > nav
+    > div.container
+    > .top_menu.mobile
+    > li
+    > .submenu1
+    > li
+    > .submenu2.active {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(6, 6, 185);
+    position: relative;
+    left: 0;
+    top: 0;
     height: max-content;
-    max-height: 290px;
-    width: max-content;
-    max-width: 894px;
+  }
+
+  div.slides {
+    width: 100%;
+  }
+
+  div.slider > div#slider {
+    width: 90%;
+    height: 100%;
   }
 
   /* setting figure styles for html text explanation */
   main > .info > article {
     min-width: 0;
+  }
+
+  main > .info {
+    width: 90%;
   }
 
   main > .info > figure {
@@ -154,6 +236,9 @@
   }
 
   /* aside section for mobile devices */
+  aside {
+    width: 90%;
+  }
 
   aside > h1 {
     margin-top: 25px;
@@ -174,26 +259,30 @@
   }
 
   aside > .hilight > figure > figcaption > a {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
 
-  footer {
+  footer > div.container {
     height: max-content;
   }
 
-  footer > nav {
+  footer > div.container > nav {
     width: 80%;
     margin: 0 auto;
   }
 
-  footer > nav > ul {
+  footer > div.container > nav > ul {
     width: 100%;
     flex-direction: column;
     align-items: center;
   }
 
-  footer > nav > ul > li {
+  footer > div.container > nav > ul > li {
     margin-bottom: 15px;
     border-bottom: 2px solid white;
+  }
+
+  footer > div.container > nav > ul > li > a {
+    font-size: 1.7rem;
   }
 }

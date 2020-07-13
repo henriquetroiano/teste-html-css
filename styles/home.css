@@ -98,6 +98,7 @@ header > nav > div.container > .top_menu > li > a {
   font-size: 1.5rem;
   height: 1.5rem;
   transition: 1s;
+  padding: 1rem 0;
 }
 
 header > nav > div.container > .top_menu > li > a:hover {
@@ -119,7 +120,7 @@ header > nav > div.container > .top_menu > li:hover > .submenu1 {
   flex-direction: column;
   justify-content: space-between;
   position: absolute;
-  top: 1.5rem;
+  top: 2.5rem;
   left: 0;
   background-color: var(--background-darkblue);
   height: max-content;
