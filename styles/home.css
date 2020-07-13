@@ -16,80 +16,97 @@
   font-family: Roboto, sans-serif;
 }
 
+html {
+  font-size: 10px;
+}
+
+/* setting limits to the page */
+body > div.container {
+  max-width: 1360px;
+  margin: 0 auto;
+}
+
 /* header style */
 
 header {
-  height: 17vh;
+  height: 14.5rem;
 }
 
 header > #phones {
-  height: 4vh;
+  height: 2.5rem;
   background-color: var(--background-darkblue);
-  padding: 3px 10%;
+  padding: 3px 0;
   width: 100%;
+}
+
+header > #phones > .container {
   display: flex;
   justify-content: flex-end;
+  height: 100%;
+  align-items: center;
+  width: 894px;
+  margin: 0 auto;
 }
 
 /* header's phone styles */
-header > #phones > a {
+header > #phones > .container > a {
   color: white;
-  font-size: 0.9rem;
+  font-size: 1.2rem;
   text-decoration: none;
   margin-left: 1rem;
-  align-self: center;
 }
 
 /* main menu styles */
-header > nav {
-  grid-area: header;
+
+header > nav > div.container {
+  max-width: 894px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
-  padding: 1vh 10%;
-  height: 13vh;
+  padding: 1rem 0;
+  height: 12rem;
 }
 
-header > nav > figure > img {
+/* eliminate span button  for mobile from desktop context */
+header > nav > div.container > span.menu_mobile_button {
+  display: none;
+}
+
+header > nav > div.container > figure > img {
   height: 100%;
   width: auto;
 }
 
-/* eliminate span button  for mobile from desktop context */
-header > nav > span {
-  display: none;
-}
-
-.top_menu {
+header > nav > div.container > .top_menu {
   height: 100%;
   display: flex;
+  justify-content: space-between;
+  padding: 0 3rem;
+  width: 50%;
 }
 
-.top_menu > li {
+header > nav > div.container > .top_menu > li {
   align-self: flex-end;
   list-style: none;
   position: relative;
-  float: left;
 }
 
-.top_menu > li > a {
+header > nav > div.container > .top_menu > li > a {
   text-transform: uppercase;
   text-decoration: none;
   color: var(--text-color);
-  padding: 15px 0 15px 10px;
-  display: block;
-  font-size: 1rem;
-  height: auto;
-
+  font-size: 1.5rem;
+  height: 1.5rem;
   transition: 1s;
 }
 
-.top_menu > li > a:hover {
+header > nav > div.container > .top_menu > li > a:hover {
   color: black;
   opacity: 0.9;
 }
 
 /* first submenu styles */
-.top_menu > li > .submenu1 {
+header > nav > div.container > .top_menu > li > .submenu1 {
   position: absolute;
   top: 0;
   left: 0;
@@ -97,12 +114,12 @@ header > nav > span {
 }
 
 /* at hover a li, it's ul item shows up -- without javascript  */
-.top_menu > li:hover > .submenu1 {
+header > nav > div.container > .top_menu > li:hover > .submenu1 {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   position: absolute;
-  top: 45px;
+  top: 1.5rem;
   left: 0;
   background-color: var(--background-darkblue);
   height: max-content;
@@ -111,20 +128,20 @@ header > nav > span {
   z-index: 50;
 }
 
-.top_menu > li:hover > .submenu1 > li {
+header > nav > div.container > .top_menu > li:hover > .submenu1 > li {
   list-style: none;
   width: 100%;
   display: flex;
 }
 
-.top_menu > li:hover > .submenu1 > li > a {
+header > nav > div.container > .top_menu > li:hover > .submenu1 > li > a {
   color: white;
   text-decoration: none;
   text-transform: uppercase;
-  font-size: 0.8rem;
+  font-size: 1.2rem;
   flex: 1;
   text-align: center;
-  line-height: 5vh;
+  line-height: 4rem;
 }
 
 /* second submenu styles */
@@ -136,10 +153,17 @@ header > nav > span {
 }
 
 /* at hover a li, it's ul item shows up -- without javascript  */
-.top_menu > li:hover > .submenu1 > li:hover > .submenu2 {
+header
+  > nav
+  > div.container
+  > .top_menu
+  > li:hover
+  > .submenu1
+  > li:hover
+  > .submenu2 {
   display: block;
   position: absolute;
-  top: 15vh;
+  top: 12rem;
   left: 100px;
   background-color: var(--background-darkblue);
   height: max-content;
@@ -147,11 +171,18 @@ header > nav > span {
   padding: 5px 0;
 }
 
-.top_menu > li:hover > .submenu1 > li:hover > .submenu2 > li {
+header
+  > nav
+  > div.container
+  > .top_menu
+  > li:hover
+  > .submenu1
+  > li:hover
+  > .submenu2
+  > li {
   list-style: none;
   width: 100%;
   width: auto;
-  height: 5vh;
   display: flex;
 }
 
@@ -159,16 +190,15 @@ header > nav > span {
   color: white;
   text-decoration: none;
   text-transform: uppercase;
-  font-size: 0.8rem;
+  font-size: 1.2rem;
   flex: 1;
   text-align: center;
   vertical-align: middle;
-  line-height: 5vh;
+  line-height: 4rem;
 }
 
 /* main styles */
 main {
-  grid-area: main;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -179,43 +209,42 @@ main > .slider {
   height: max-content;
 }
 
-section.slider > div#slider {
-  height: max-content;
-  max-height: 290px;
-  width: max-content;
-  max-width: 894px;
+div.slider > div#slider {
+  height: 290px;
+  width: 894px;
 }
 
 /* main article styles */
 main > .info {
-  width: 80%;
+  width: 100%;
+  max-width: 894px;
   display: flex;
   justify-content: space-between;
   margin: 0 auto;
   flex-wrap: wrap;
-  padding: 10px 0;
+  padding: 1rem 0;
 }
 
 main > .info > article {
-  min-width: 50vh;
+  min-width: 60%;
 }
 
 main > .info > article > h1 {
   text-transform: uppercase;
   color: var(--text-color);
   margin-bottom: 15px;
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 main > .info > article > p {
   color: var(--text-color);
   margin: 10px 0;
-  font-size: 1rem;
+  font-size: 1.5rem;
 }
 
 main > .info > article li {
   color: var(--text-color);
-  font-size: 1rem;
+  font-size: 1.5rem;
   list-style-position: inside;
 }
 
@@ -224,13 +253,13 @@ main > .info > article li {
 aside {
   height: max-content;
   margin: 0 auto;
-  width: 80%;
+  width: 894px;
   padding: 0 0 20px 0;
 }
 
 aside > h1 {
   color: var(--text-color);
-  font-size: 1.5rem;
+  font-size: 2rem;
   margin: 10px 0;
   text-transform: uppercase;
 }
@@ -254,19 +283,20 @@ aside > .hilight > figure > img {
 }
 
 aside > .hilight > figure > figcaption > a {
-  font-size: 0.7rem;
+  font-size: 1.2rem;
   text-decoration: none;
   color: var(--text-color);
+  max-width: 163px;
 }
 
 /* this don't let the figure touch his "brother" when resize the screen, when it happens, it wraps!  */
 aside > .hilight > figure + figure {
-  margin-left: 50px;
+  margin-left: 1rem;
 }
 
 /* footer styles */
-footer {
-  grid-area: footer;
+
+footer > div.container {
   width: 100%;
   background: var(--footer-color);
   display: flex;
@@ -276,34 +306,35 @@ footer {
   justify-content: space-between;
 }
 
-footer > nav > ul {
+footer > div.container > nav > ul {
   display: flex;
   justify-content: space-between;
   width: 33%;
   margin: 15px 0;
 }
 
-footer > nav > ul > li {
+footer > div.container > nav > ul > li {
   list-style: none;
 }
 
-footer > nav > ul > li > a {
+footer > div.container > nav > ul > li > a {
   color: white;
   text-decoration: none;
-  font-size: 1.2rem;
+  font-size: 2rem;
   padding: 10px;
+  text-transform: uppercase;
   transition: 1s;
 }
 
-footer > nav > ul > li > a:hover {
+footer > div.container > nav > ul > li > a:hover {
   background-color: white;
   color: black;
   border-bottom: 2px solid black;
 }
 
-footer > p {
+footer > div.container > p {
   color: white;
   text-transform: uppercase;
-  font-size: 1.2rem;
-  margin-bottom: 5vh;
+  font-size: 2rem;
+  margin-bottom: 3rem;
 }
